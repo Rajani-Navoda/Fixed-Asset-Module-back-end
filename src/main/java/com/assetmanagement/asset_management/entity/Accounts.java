@@ -2,7 +2,6 @@ package com.assetmanagement.asset_management.entity;
 
 import com.assetmanagement.asset_management.entity.enums.AccountType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,6 +36,9 @@ public class Accounts {
     @Column(name = "description",length= 255)
     private String description;
 
+    @Column(name = "is_Zoho_Expense")
+    private Boolean isZohoExpense;
+
 
 //    @OneToMany(mappedBy = "faAccount")
 //    private List<FixedAssets> fixedAssets;
@@ -55,7 +57,7 @@ public class Accounts {
     @OneToMany(mappedBy = "accumulatedDepreciationAccount")
     private List<FixedAssetTypes> accumulatedDepreciationAssetTypes;
 
-    @OneToMany(mappedBy = "depreciationExpenseAccount")
-    private List<FixedAssetTypes> depreciationExpenseAssetTypes;
+//    @OneToMany(mappedBy = "depreciationExpenseAccount")
+//    private List<FixedAssetTypes> depreciationExpenseAssetTypes;
 
 }

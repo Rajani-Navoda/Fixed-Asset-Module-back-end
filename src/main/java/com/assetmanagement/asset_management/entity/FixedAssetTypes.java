@@ -1,5 +1,6 @@
 package com.assetmanagement.asset_management.entity;
 
+import com.assetmanagement.asset_management.entity.enums.ComputationType;
 import com.assetmanagement.asset_management.entity.enums.DepreciationFrequency;
 import com.assetmanagement.asset_management.entity.enums.DepreciationMethod;
 import lombok.AllArgsConstructor;
@@ -31,20 +32,28 @@ public class FixedAssetTypes {
   @Column(name = "depreciation_frequency")
   private DepreciationFrequency depreciationFrequency;
 
+  @Enumerated(EnumType.STRING)
+  @Column(name = "computation_type")
+  private ComputationType computationType;
+
+
   @Column(name = "asset_life")
   private int assetLife;
 
-//  private String accumulatedDepreciationAccount;
-//  private String depreciationExpenseAccount;
 
+  //mapping for the fixed asset types
+  //every fixed asset type has a accumulated depreciation account.
   @ManyToOne
   @JoinColumn(name = "accumulated_depreciation_account_code", referencedColumnName = "account_code")
   private Accounts accumulatedDepreciationAccount;
 
+  //every fixed asset type has a accumulated depreciation expense account.
   @ManyToOne
   @JoinColumn(name = "depreciation_expense_account_code", referencedColumnName = "account_code")
   private Accounts depreciationExpenseAccount;
 
+  //mapping with the fixed assets
+  //fixed asset have a fixed asset type
   @OneToMany(mappedBy = "fixedAssetTypes")
   private List<FixedAssets> fixedAssets;
 
