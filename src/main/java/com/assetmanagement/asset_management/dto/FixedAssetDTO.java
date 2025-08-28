@@ -8,11 +8,18 @@ import com.assetmanagement.asset_management.entity.enums.DepreciationMethod;
 import com.assetmanagement.asset_management.entity.enums.Status;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class FixedAssetDTO {
 
     private String faNumber;

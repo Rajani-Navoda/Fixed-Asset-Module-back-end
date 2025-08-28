@@ -37,4 +37,6 @@ public class FixedAssetController {
         List<GetFixedAssetsDTO> allFixedAssets = fixedAssetService.getAllFixedAssets();
         return  allFixedAssets;
     }
+
+
 }

@@ -67,7 +67,7 @@ public class FixedAssetImpl implements FixedAssetService {
             return getFixedAssetsDTOS;
         }
         else{
-            throw new NotFoundException("No beverages found");
+            throw new NotFoundException("No fixed assets found");
         }
 
     }

@@ -42,7 +42,7 @@ public class FixedAssetTypes {
 
 
   //mapping for the fixed asset types
-  //every fixed asset type has a accumulated depreciation account.
+  //every fixed asset type has accumulated depreciation account.
   @ManyToOne
   @JoinColumn(name = "accumulated_depreciation_account_code", referencedColumnName = "account_code")
   private Accounts accumulatedDepreciationAccount;
